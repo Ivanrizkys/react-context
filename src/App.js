@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+// import Reducer from "./components/Reducer";
+import DisplayTheme from "./components/DisplayTheme";
+import Navbar from "./components/Navbar";
+import Setting from "./components/Setting";
+import ToggleTheme from "./components/ToogleTheme";
+import { AppProvider } from "./context/app-context";
+import { ThemeProvider } from "./context/theme-context";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div className="">
+			<AppProvider>
+				<ThemeProvider>
+					<Navbar />
+					<hr className="my-5"/>
+					<Setting />
+					<hr className="my-5"/>
+					<DisplayTheme />
+					<ToggleTheme />
+					{/* <Reducer /> */}
+				</ThemeProvider>
+			</AppProvider>
+        </div>
+    );
 }
 
 export default App;
